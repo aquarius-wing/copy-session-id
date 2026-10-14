@@ -1,0 +1,14 @@
+{
+  "name": "copy-session-id",
+  "owner": { "name": "aquarius-wing" },
+  "metadata": {
+    "description": "Copy Session ID: a Claude Code mod that adds a copy button for the session ID above the prompt."
+  },
+  "plugins": [
+    {
+      "name": "copy-session-id",
+      "source": "./",
+      "description": "Adds a Copy Session ID button to the band above the prompt."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "copy-session-id",
+  "version": "1.0.0",
+  "description": "Adds a Copy Session ID button to the band above the prompt",
+  "author": {
+    "name": "aquarius-wing"
+  },
+  "homepage": "https://github.com/aquarius-wing/copy-session-id",
+  "repository": "https://github.com/aquarius-wing/copy-session-id",
+  "license": "MIT",
+  "keywords": [
+    "mod",
+    "session",
+    "clipboard"
+  ]
+}

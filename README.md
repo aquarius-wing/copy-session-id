@@ -45,7 +45,15 @@ The band above the prompt is one site that every mod drawing there shares. Mods 
 If the button doesn't show while another band mod is installed:
 
 - **Ask that mod to compose with `next(e)`.** The [mods docs](https://code.claude.com/docs/en/plugins/mods/interface#pick-where-to-draw) describe this: put the result of `await next(e)` in your own tree to keep what the others draw. For example, the Token Weather sample mod hides other band mods; [anthropics/claude-code-playground#7](https://github.com/anthropics/claude-code-playground/pull/7) changes that.
-- **Run this mod first.** According to the [mods admin docs](https://code.claude.com/docs/en/plugins/mods/admin#install-your-organizations-mods), on a machine with no managed settings, and when you aren't signed in with a Team or Enterprise plan, you can list plugin ids in `prependPlugins` in `~/.claude/settings.json` to run them before the mods you install. I haven't tested this path.
+- **Run this mod first.** On a machine with no managed settings, and when you aren't signed in with a Team or Enterprise plan, you can list plugin ids in `prependPlugins` in `~/.claude/settings.json` to run them before the other mods you install (see the [mods admin docs](https://code.claude.com/docs/en/plugins/mods/admin#install-your-organizations-mods)):
+
+  ```json
+  {
+    "prependPlugins": ["copy-session-id@copy-session-id"]
+  }
+  ```
+
+  Then run `/reload-plugins` in each open session. To check it took, start `claude --debug-file debug.log` and look for `hooks module copy-session-id@copy-session-id loaded (..., tier prepend)`. Tested with Claude Code 2.1.295 on a personal Max plan.
 
 ## Development
 
